@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Profile</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+</head>
+<body>
+    <h1>Daisy Store</h1>
+    <div class="login">
+        <h2>My Profile</h2>
+
+        <form method="POST">
+            <input type="text" name="name" value="{{user.name}}" required>
+            <br><br>
+            <input type="email" value="{{user.email}}" readonly>
+            <br><br>
+            <button type="submit">Update Profile</button>
+        </form>
+
+        <a href="/dashboard">Back to Dashboard</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Orders</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+</head>
+<body>
+
+<h1>🌸 Daisy Store - Admin Orders</h1>
+
+<h2>All Customer Orders</h2>
+
+<table>
+    <tr>
+        <th>Order ID</th>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Total</th>
+        <th>Status</th>
+    </tr>
+
+    {% for o in orders %}
+    <tr>
+        <td>{{o.id}}</td>
+        <td>{{o.product_name}}</td>
+        <td>₹{{o.price}}</td>
+        <td>{{o.quantity}}</td>
+        <td>₹{{o.total}}</td>
+        <td>
+    <form method="POST" action="/update_order/{{o.id}}">
+        <select name="status">
+            <option value="Pending">Pending</option>
+            <option value="Processing">Processing</option>
+            <option value="Shipped">Shipped</option>
+            <option value="Delivered">Delivered</option>
+            <option value="Cancelled">Cancelled</option>
+        </select>
+        <button type="submit">Update</button>
+    </form>
+</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<a href="/admin">Back to Admin Dashboard</a>
+
+</body>
+</html>

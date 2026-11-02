@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daisy Store - Return Product</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+    <style>
+        .page-card{
+            max-width:650px;
+            margin:35px auto;
+            padding:30px;
+            background:white;
+            border-radius:15px;
+            box-shadow:0 8px 25px #142b4a15;
+        }
+        .page-card button{
+            width:100%;
+            margin:12px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="topbar">
+        <h1>Daisy Store</h1>
+        <a href="/dashboard">Dashboard</a>
+    </div>
+
+    <div class="page-card">
+        <h2>Return Product</h2>
+        <p>Submit a product return request.</p>
+
+        <form method="POST" action="/return_product">
+            <label>Order ID</label>
+            <input type="number" name="order_id" placeholder="Enter order ID" required>
+
+            <label>Product Name</label>
+            <input type="text" name="product_name" placeholder="Enter product name" required>
+
+            <label>Customer Email</label>
+            <input type="email" name="customer_email" placeholder="Enter email" required>
+
+            <label>Reason for Return</label>
+            <textarea name="reason" placeholder="Explain why you want to return this product" required></textarea>
+
+            <label>Return Date</label>
+            <input type="date" name="return_date" required>
+
+            <button type="submit">Submit Return Request</button>
+        </form>
+    </div>
+</body>
+</html>

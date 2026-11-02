@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Product - Daisy Store</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+<body>
+    <h1>Daisy Store</h1>
+    <div class="login">
+        <h2>Add Product</h2>
+        <form method="POST">
+            <input type="text" name="product_name" placeholder="Product Name" required><br><br>
+            <input type="text" name="category" placeholder="Product Category" required><br><br>
+            <input type="number" name="quantity" placeholder="Quantity" required><br><br>
+            <input type="number" name="price" placeholder="Price" required><br><br>
+            <button type="submit">Add Product</button>
+        </form>
+    </div>
+</body>
+</html>

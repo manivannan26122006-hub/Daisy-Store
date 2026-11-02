@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daisy Store - Salary List</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+    <style>
+        .page-card{
+            max-width:1000px;
+            margin:35px auto;
+            padding:25px;
+            background:white;
+            border-radius:15px;
+            box-shadow:0 8px 25px #142b4a15;
+        }
+    </style>
+</head>
+<body>
+    <div class="topbar">
+        <h1>Daisy Store</h1>
+        <a href="/dashboard">Dashboard</a>
+    </div>
+
+    <div class="page-card">
+        <h2>Employee Salary List</h2>
+        <p>View all registered employee salary details.</p>
+
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Salary</th>
+            </tr>
+            {% for e in employees %}
+            <tr>
+                <td>{{e.id}}</td>
+                <td>{{e.name}}</td>
+                <td>{{e.email}}</td>
+                <td>₹{{e.salary}}</td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="4">No employees found.</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

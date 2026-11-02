@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daisy Store - Attendance</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+    <style>
+        .page-card{
+            max-width:650px;
+            margin:35px auto;
+            padding:30px;
+            background:white;
+            border-radius:15px;
+            box-shadow:0 8px 25px #142b4a15;
+        }
+        .page-card button{
+            width:100%;
+            margin:12px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="topbar">
+        <h1>Daisy Store</h1>
+        <a href="/dashboard">Dashboard</a>
+    </div>
+
+    <div class="page-card">
+        <h2>Employee Attendance</h2>
+        <p>Record daily employee attendance.</p>
+
+        <form method="POST" action="/attendance">
+            <label>Employee ID</label>
+            <input type="number" name="employee_id" placeholder="Enter employee ID" required>
+
+            <label>Employee Name</label>
+            <input type="text" name="employee_name" placeholder="Enter employee name" required>
+
+            <label>Attendance Date</label>
+            <input type="date" name="attendance_date" required>
+
+            <label>Attendance Status</label>
+            <select name="status">
+                <option value="Present">Present</option>
+                <option value="Absent">Absent</option>
+            </select>
+
+            <button type="submit">Save Attendance</button>
+        </form>
+    </div>
+</body>
+</html>

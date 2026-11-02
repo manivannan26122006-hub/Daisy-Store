@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daisy Store - Admin Dashboard</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+</head>
+<body>
+
+<div class="topbar">
+    <h1>🌸 Daisy Store - Admin</h1>
+    <a href="/logout">Logout</a>
+</div>
+
+<div class="dashboard-content">
+    <div class="welcome">
+        <h2>Welcome, Admin!</h2>
+        <p>Manage your Daisy Store from one place.</p>
+    </div>
+
+    <h2 class="section-title">Store Management</h2>
+
+    <div class="module-grid">
+
+        <a href="/products" class="module-card">
+            <span>📦</span>
+            <h3>Products</h3>
+            <p>View all products</p>
+        </a>
+
+        <a href="/add_product" class="module-card">
+            <span>➕</span>
+            <h3>Add Product</h3>
+            <p>Add new products</p>
+        </a>
+
+        <a href="/admin_orders" class="module-card">
+            <span>🛒</span>
+            <h3>Admin Orders</h3>
+            <p>Manage customer orders</p>
+        </a>
+
+        <a href="/revenue" class="module-card">
+            <span>💰</span>
+            <h3>Revenue</h3>
+            <p>View store revenue</p>
+        </a>
+
+        <a href="/employee_register" class="module-card">
+            <span>👨‍💼</span>
+            <h3>Employee Register</h3>
+            <p>Register employees</p>
+        </a>
+
+        <a href="/salary_list" class="module-card">
+            <span>💵</span>
+            <h3>Employee Salary</h3>
+            <p>View salary details</p>
+        </a>
+
+        <a href="/attendance" class="module-card">
+            <span>📅</span>
+            <h3>Attendance</h3>
+            <p>Manage attendance</p>
+        </a>
+
+        <a href="/salary_increment" class="module-card">
+            <span>📈</span>
+            <h3>Salary Increment</h3>
+            <p>Update employee salary records</p>
+        </a>
+
+        <a href="/return_product" class="module-card">
+            <span>↩️</span>
+            <h3>Return Product</h3>
+            <p>Manage return requests</p>
+        </a>
+
+        <a href="/offers" class="module-card">
+            <span>🎁</span>
+            <h3>Offers</h3>
+            <p>Create special offers</p>
+        </a>
+
+        <a href="/otp" class="module-card">
+            <span>🔐</span>
+            <h3>OTP Verification</h3>
+            <p>Open demo OTP verification</p>
+        </a>
+
+        <a href="/stock" class="module-card">
+            <span>📊</span>
+            <h3>Stock Management</h3>
+            <p>Manage product stock</p>
+        </a>
+
+        <a href="/contact" class="module-card">
+            <span>📩</span>
+            <h3>Contact Messages</h3>
+            <p>Open contact page</p>
+        </a>
+
+    </div>
+
+    <br>
+    <a href="/dashboard">User Dashboard</a>
+</div>
+
+</body>
+</html>

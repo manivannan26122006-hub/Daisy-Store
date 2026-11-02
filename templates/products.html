@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daisy Store Products</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+</head>
+<body>
+    <h1>Daisy Store</h1>
+    <h2>Product List</h2>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Product Name</th>
+            <th>Category</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+
+        {% for p in products %}
+        <tr>
+            <td>{{p.id}}</td>
+            <td>{{p.product_name}}</td>
+            <td>{{p.category}}</td>
+            <td>{{p.quantity}}</td>
+            <td>{{p.price}}</td>
+            <td>
+    <form method="POST" action="/add_to_cart/{{p.id}}">
+        <button type="submit">Add to Cart 🛒</button>
+    </form>
+</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,82 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daisy Store Dashboard</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+</head>
+<body>
+
+<div class="topbar">
+    <h1>🌸 Daisy Store</h1>
+    <a href="/logout">Logout ↗</a>
+</div>
+
+<div class="dashboard">
+
+    <div class="sidebar">
+        <h2>MAIN MENU</h2>
+        <a href="/dashboard">🏠 Dashboard</a>
+        <a href="/products">🛍️ Products</a>
+        <a href="/add_product">➕ Add Product</a>
+        <a href="/search">🔍 Search Products</a>
+        <a href="/cart">🛒 My Cart</a>
+        <a href="/my_orders">📦 My Orders</a>
+        <a href="/profile">👤 My Profile</a>
+        <a href="/feedback">⭐ Feedback</a>
+        <a href="/grievance">📝 Grievance</a>
+    </div>
+
+    <div class="dashboard-content">
+
+        <div class="welcome">
+            <h2>Welcome, {{name}}! 👋</h2>
+            <p>Your Daisy Store shopping dashboard</p>
+        </div>
+
+        <h2 class="section-title">Quick Access</h2>
+
+        <div class="module-grid">
+
+            <a href="/products" class="module-card">
+                <span>🛍️</span>
+                <h3>Products</h3>
+                <p>Explore products</p>
+            </a>
+
+            <a href="/add_product" class="module-card">
+                <span>➕</span>
+                <h3>Add Product</h3>
+                <p>Add new products</p>
+            </a>
+
+            <a href="/cart" class="module-card">
+                <span>🛒</span>
+                <h3>My Cart</h3>
+                <p>View shopping cart</p>
+            </a>
+
+            <a href="/my_orders" class="module-card">
+                <span>📦</span>
+                <h3>My Orders</h3>
+                <p>View your orders</p>
+            </a>
+
+            <a href="/profile" class="module-card">
+                <span>👤</span>
+                <h3>My Profile</h3>
+                <p>Manage your account</p>
+            </a>
+
+            <a href="/feedback" class="module-card">
+                <span>⭐</span>
+                <h3>Feedback</h3>
+                <p>Share your feedback</p>
+            </a>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

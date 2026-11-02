@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daisy Store - Offers</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+    <style>
+        .offer-container{
+            max-width:850px;
+            margin:40px auto;
+            padding:30px;
+            background:white;
+            border-radius:16px;
+            box-shadow:0 8px 25px #142b4a15;
+        }
+        .offer-container textarea{
+            min-height:110px;
+        }
+        .offer-container button{
+            width:100%;
+            margin:12px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="topbar">
+        <h1>Daisy Store</h1>
+        <a href="/dashboard">Dashboard</a>
+    </div>
+
+    <div class="offer-container">
+        <h2>Manage Special Offers</h2>
+        <p>Create discounts and special deals for your customers.</p>
+
+        <form method="POST" action="/offers">
+            <label>Offer Name</label>
+            <input type="text" name="offer_name" placeholder="Enter offer name" required>
+
+            <label>Description</label>
+            <textarea name="description" placeholder="Describe the offer" required></textarea>
+
+            <label>Discount Percentage</label>
+            <input type="number" step="0.01" name="discount" placeholder="Enter discount %" required>
+
+            <label>Start Date</label>
+            <input type="date" name="start_date" required>
+
+            <label>End Date</label>
+            <input type="date" name="end_date" required>
+
+            <button type="submit">Create Offer</button>
+        </form>
+    </div>
+</body>
+</html>

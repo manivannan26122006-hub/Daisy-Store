@@ -1,0 +1,297 @@
+
+*{
+    box-sizing:border-box;
+}
+
+:root{
+    --navy:#142b4a;
+    --teal:#0d9488;
+    --orange:#f97316;
+    --bg:#f4f7fb;
+    --white:#ffffff;
+    --text:#263445;
+    --muted:#64748b;
+}
+
+body{
+    margin:0;
+    font-family:'Segoe UI',Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    min-height:100vh;
+}
+
+h1{
+    margin:0;
+    padding:25px;
+    text-align:center;
+    color:white;
+    background:var(--navy);
+    letter-spacing:1px;
+    box-shadow:0 4px 15px #0002;
+}
+
+h2{
+    text-align:center;
+    color:var(--navy);
+    margin:25px 0;
+}
+
+h3{
+    color:var(--navy);
+}
+
+p{
+    text-align:center;
+    font-size:16px;
+    line-height:1.6;
+}
+
+.login{
+    width:400px;
+    max-width:92%;
+    margin:45px auto;
+    padding:32px;
+    background:white;
+    border-radius:16px;
+    border-top:5px solid var(--teal);
+    box-shadow:0 10px 30px #142b4a15;
+}
+
+input,select,textarea{
+    width:100%;
+    padding:13px;
+    margin:9px 0;
+    border:1px solid #d6deea;
+    border-radius:9px;
+    outline:none;
+    font-size:15px;
+    background:white;
+    transition:.2s;
+}
+
+input:focus,select:focus,textarea:focus{
+    border-color:var(--teal);
+    box-shadow:0 0 0 3px #0d948822;
+}
+
+button{
+    padding:12px 22px;
+    margin:8px;
+    border:0;
+    border-radius:9px;
+    background:var(--teal);
+    color:white;
+    font-size:15px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.25s;
+}
+
+button:hover{
+    background:#08766d;
+    transform:translateY(-2px);
+    box-shadow:0 5px 14px #0002;
+}
+
+table{
+    width:90%;
+    margin:30px auto;
+    background:white;
+    border-collapse:collapse;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 6px 22px #142b4a10;
+}
+
+th{
+    padding:16px;
+    color:white;
+    background:var(--navy);
+}
+
+td{
+    padding:14px;
+    text-align:center;
+    border-bottom:1px solid #e8edf3;
+}
+
+tr:nth-child(even){
+    background:#f8fafc;
+}
+
+tr:hover{
+    background:#e6f5f3;
+}
+
+a{
+    color:var(--teal);
+    text-decoration:none;
+    font-weight:600;
+}
+
+a:hover{
+    color:var(--orange);
+}
+
+.dashboard{
+    display:flex;
+    min-height:80vh;
+}
+
+.sidebar{
+    width:250px;
+    padding:25px 15px;
+    background:var(--navy);
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.sidebar a{
+    display:block;
+    padding:14px;
+    color:white;
+    border-radius:9px;
+    transition:.25s;
+}
+
+.sidebar a:hover{
+    background:var(--teal);
+    color:white;
+    transform:translateX(4px);
+}
+
+.dashboard-content{
+    flex:1;
+    padding:35px;
+    text-align:center;
+    min-width:0;
+}
+
+textarea{
+    min-height:100px;
+    resize:vertical;
+}
+
+.topbar{
+    background:var(--navy);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 30px;
+}
+
+.topbar h1{
+    padding:10px;
+    box-shadow:none;
+}
+
+.topbar a{
+    color:white;
+    background:var(--orange);
+    padding:12px 18px;
+    border-radius:8px;
+}
+
+.welcome{
+    background:white;
+    padding:28px;
+    border-radius:16px;
+    border-left:5px solid var(--teal);
+    box-shadow:0 6px 22px #142b4a10;
+}
+
+.welcome h2{
+    margin:5px;
+}
+
+.section-title{
+    text-align:left;
+    margin-top:30px;
+}
+
+.module-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.module-card{
+    background:white;
+    padding:26px 16px;
+    border-radius:16px;
+    text-align:center;
+    border:1px solid #e4eaf1;
+    box-shadow:0 5px 18px #142b4a0c;
+    transition:.25s;
+}
+
+.module-card:hover{
+    transform:translateY(-5px);
+    border-color:var(--teal);
+    box-shadow:0 12px 25px #142b4a18;
+}
+
+.module-card span{
+    font-size:35px;
+}
+
+.module-card h3{
+    color:var(--navy);
+}
+
+.module-card p{
+    color:var(--muted);
+    font-size:14px;
+}
+
+@media(max-width:800px){
+    .module-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:600px){
+    .dashboard{
+        flex-direction:column;
+    }
+
+    .sidebar{
+        width:100%;
+    }
+
+    .dashboard-content{
+        padding:15px;
+    }
+
+    table{
+        width:100%;
+        font-size:12px;
+        display:block;
+        overflow-x:auto;
+    }
+
+    th,td{
+        padding:9px;
+        white-space:nowrap;
+    }
+
+    .topbar{
+        padding:10px;
+    }
+
+    .topbar h1{
+        font-size:20px;
+    }
+}
+
+@media(max-width:500px){
+    .module-grid{
+        grid-template-columns:1fr;
+    }
+
+    .login{
+        padding:22px;
+    }
+}

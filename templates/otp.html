@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daisy Store - OTP Verification</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+    <style>
+        .page-card{
+            max-width:500px;
+            margin:45px auto;
+            padding:30px;
+            background:white;
+            border-radius:16px;
+            box-shadow:0 8px 25px #142b4a15;
+        }
+        .page-card button{
+            width:100%;
+            margin:12px 0;
+        }
+        .otp-section{
+            border-top:1px solid #e2e8f0;
+            margin-top:25px;
+            padding-top:15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="topbar">
+        <h1>Daisy Store</h1>
+        <a href="/dashboard">Dashboard</a>
+    </div>
+
+    <div class="page-card">
+        <h2>OTP Verification</h2>
+        <p>Verify your email using the demo OTP.</p>
+
+        <form method="POST" action="/send_otp">
+            <label>Email Address</label>
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <button type="submit">Generate Demo OTP</button>
+        </form>
+
+        <div class="otp-section">
+            <h3>Verify OTP</h3>
+            <form method="POST" action="/verify_otp">
+                <label>Email Address</label>
+                <input type="email" name="email" placeholder="Enter the same email" required>
+
+                <label>6-Digit OTP</label>
+                <input type="text" name="otp" placeholder="Enter OTP" maxlength="6" required>
+
+                <button type="submit">Verify OTP</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
